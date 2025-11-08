@@ -3,7 +3,6 @@ package tests;
 import helpMethods.ElementsMethod;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -43,25 +42,21 @@ public class PracticeForm {
         //Date Of birth interaction
         WebElement dateOfBirth = driver.findElement(By.id("dateOfBirthInput"));
         elementsMethod.javaScriptElement(dateOfBirth);
+
         WebElement monthElement = driver.findElement(By.className("react-datepicker__month-select"));
-        Select monthSelect = new Select(monthElement);
-        String monthValue = "January";
-        monthSelect.selectByVisibleText(monthValue);
+        elementsMethod.selectDropdownElement(monthElement, "January");
 
         WebElement yearElement = driver.findElement(By.className("react-datepicker__year-select"));
-        Select yearSelect = new Select(yearElement);
-        String yearValue = "1999";
-        yearSelect.selectByVisibleText(yearValue);
+        elementsMethod.selectDropdownElement(yearElement, "1999");
 
         String dayValue = "23";
         List <WebElement> daysList = driver.findElements(By.xpath("//div[contains(@class, 'react-datepicker__day--') and not (contains(@class, '--outside-month'))]"));
         for ( int i=0; i< daysList.size(); i++){
             if (daysList.get(i).getText().equals(dayValue)){
-                daysList.get(i).click();
+                elementsMethod.clickElement(daysList.get(i));
                 break;
             }
         }
-
 
 //        WebElement currentAddressElement = driver.findElement(By.id("currentAddress"));
 //        String currentAddress = "Bucuresti";
