@@ -34,24 +34,6 @@ public class AlertTest {
         AlertsWindows alertsWindows = new AlertsWindows(driver);
         alertsWindows.clickAlert();
 
-        WebElement firstAlertButton = driver.findElement(By.id("alertButton"));
-        elementsMethod.clickElement(firstAlertButton);
-        alertsMethods.acceptAlert();
-
-        WebElement secondAlert = driver.findElement(By.id("timerAlertButton"));
-        elementsMethod.clickElement(secondAlert);
-        alertsMethods.acceptAlert();
-
-        WebElement thirdAlertButton = driver.findElement(By.id("confirmButton"));
-        elementsMethod.javaScriptElement(thirdAlertButton);
-        alertsMethods.acceptAlert(false);
-
-        WebElement fourthAlertButton = driver.findElement(By.id("promtButton"));
-        elementsMethod.javaScriptElement(fourthAlertButton);
-        alertsMethods.fillAlert("text");
-
-        WebElement textThirdAlert = driver.findElement(By.id("confirmResult"));
-        String actualText = textThirdAlert.getText();
-        alertsMethods.verifyConfirmAlert(actualText, false);
+        alertsWindows.dealAlertProcess();
     }
 }
