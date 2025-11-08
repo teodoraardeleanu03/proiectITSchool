@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import pages.AlertsWindows;
+import pages.HomePage;
 
 import java.time.Duration;
 
@@ -26,11 +28,11 @@ public class AlertTest {
         // wait implicit (vegheaza asupra codului)
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        WebElement alertMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
-        elementsMethod.javaScriptElement(alertMenu);
+        HomePage homePage = new HomePage(driver);
+        homePage.clickAlertFrameWindow();
 
-        WebElement tabButton = driver.findElement(By.xpath("//span[text()='Alerts']"));
-        elementsMethod.clickElement(tabButton);
+        AlertsWindows alertsWindows = new AlertsWindows(driver);
+        alertsWindows.clickAlert();
 
         WebElement firstAlertButton = driver.findElement(By.id("alertButton"));
         elementsMethod.clickElement(firstAlertButton);
