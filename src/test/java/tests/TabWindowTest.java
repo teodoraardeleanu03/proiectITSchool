@@ -1,17 +1,17 @@
 package tests;
 
+import helpMethods.ElementsMethod;
+import helpMethods.TabMethods;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class TabWindowTest {
     public WebDriver driver;
+    ElementsMethod elementsMethod;
+    TabMethods tabMethods;
 
     @Test
     public void metodaTest() {
@@ -19,30 +19,28 @@ public class TabWindowTest {
         driver.get("https://demoqa.com/");
         driver.manage().window().maximize();
 
+        elementsMethod = new ElementsMethod(driver);
+        tabMethods = new TabMethods(driver);
+
         WebElement alertMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", alertMenu);
+        elementsMethod.javaScriptElement(alertMenu);
 
         WebElement tabButton = driver.findElement(By.xpath("//span[text()='Browser Windows']"));
-        tabButton.click();
+        elementsMethod.javaScriptElement(tabButton);
 
         WebElement tabButtonElement = driver.findElement(By.id("tabButton"));
-        tabButtonElement.click();
+        elementsMethod.javaScriptElement(tabButtonElement);
 
         System.out.println("URL-ul paginii curente este " + driver.getCurrentUrl());
 
-        List<String> tabsList = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tabsList.get(1));
-        System.out.println("URL-ul paginii curente este " + driver.getCurrentUrl());
-        driver.close();
-        driver.switchTo().window(tabsList.get(0));
+        tabMethods.switchSpecificTab(1);
+        tabMethods.closeCurrentTab();
+
+        tabMethods.switchSpecificTab(0);
 
         WebElement newWindowElement = driver.findElement(By.id("windowButton"));
-        newWindowElement.click();
-        List<String> newWindowList = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(newWindowList.get(1));
-
+        elementsMethod.javaScriptElement(newWindowElement);
+        tabMethods.switchSpecificTab(1);
         driver.quit();
-
     }
 }
