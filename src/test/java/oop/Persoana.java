@@ -29,6 +29,10 @@ public class Persoana {
         System.out.println("Adresa persoanei este " + adresa);
     }
 
+    public void mananca() {
+        System.out.println("Persoana mananca atunci cand ii este foame.");
+    }
+
     public String getNume() {
         return nume;
     }
