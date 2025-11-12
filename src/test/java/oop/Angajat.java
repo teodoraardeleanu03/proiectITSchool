@@ -1,6 +1,6 @@
 package oop;
 
-public class Angajat extends Persoana {
+public class Angajat extends Persoana implements AngajatInterface {
     private String firma;
     private double salariu;
     private String contract;
@@ -70,5 +70,20 @@ public class Angajat extends Persoana {
 
     public void afiseazaDetalii(String firma, boolean contract) {
         System.out.println("Afisez angajatii din: " + firma + " cu contract pe perioada determinata " + contract);
+    }
+
+    @Override
+    public void ajungeLaTimpLaBirou() {
+        System.out.println("Angajatul trebuie sa ajunga la birou la 8.");
+    }
+
+    @Override
+    public void munceste() {
+        System.out.println("Angajatul trebuie sa munceasca in intervalul 8 - 17");
+    }
+
+    @Override
+    public void respectaRegulamentulIntern() {
+        System.out.println("Angajatul respecta ordinul intern.");
     }
 }

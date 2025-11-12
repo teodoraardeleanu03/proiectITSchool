@@ -1,6 +1,6 @@
 package oop;
 
-public class Student extends Persoana {
+public class Student extends Persoana implements StudentInterface {
     private String facultate;
     private String domeniu;
     private int an;
@@ -69,5 +69,20 @@ public class Student extends Persoana {
 
     public void setRestante(boolean restante) {
         this.restante = restante;
+    }
+
+    @Override
+    public void mergeLaCursuri() {
+        System.out.println("Studentul este obligat sa mearga la cursuri.");
+    }
+
+    @Override
+    public void trebuieSaStudieze() {
+        System.out.println("Studentul trebuie sa studieze pentru examene.");
+    }
+
+    @Override
+    public void saNuAibaRestante() {
+        System.out.println("Studentul trebuie sa nu aiba restante la examene.");
     }
 }

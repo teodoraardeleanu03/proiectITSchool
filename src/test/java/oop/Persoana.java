@@ -9,6 +9,11 @@ public class Persoana {
     // Acest lucru se realizeaza cu ajutorul keyword-ului super().
     // Mostenirea se declara la nivel de clasa prin keyword-ul extends.
     // In Java, o clasa poate mosteni o singura alta clasa (mostenire unica).
+    // Polimorfismul este conceptul prin care o metoda poate avea implementari diferite.
+    // Polimorfismul este de 2 feluri: static (overload) si dinamic (override).
+    // Dinamic = intr-o ierarhie de clasa este obtinut prin mostenire.
+    // O metoda poate avea implementari diferite
+    // Polimorfismul dinamic se regaseste doar atunci cand exista mosteniri.
 
     private String nume;
     private String prenume;
