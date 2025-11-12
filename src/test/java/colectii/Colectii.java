@@ -34,7 +34,7 @@ public class Colectii {
         cursanti.add("Teodora");
         cursanti.add("Oana");
         cursanti.add("Ioana");
-        for(int i = 0; i < cursanti.size(); i++) {
+        for (int i = 0; i < cursanti.size(); i++) {
             System.out.println("Numele cursantului este: " + cursanti.get(i));
         }
     }
@@ -46,7 +46,7 @@ public class Colectii {
         masini.add("BMW");
         masini.add("Skoda");
 
-        for(int i = 0; i < masini.size(); i++) {
+        for (int i = 0; i < masini.size(); i++) {
             System.out.println("Numele masinii este: " + masini.get(i));
         }
     }
@@ -59,7 +59,7 @@ public class Colectii {
         elemente.put("Masina", "Dacia");
         elemente.put("Persoana", "Alex");
         elemente.put("Telefon", "iPhone");
-        for(String key: elemente.keySet()) {
+        for (String key : elemente.keySet()) {
             System.out.println("Cheia este " + key);
             System.out.println("Valoarea este " + elemente.get(key));
         }
@@ -75,7 +75,7 @@ public class Colectii {
         obiecte.put("Italia", oraseItalia);
         obiecte.put("Spania", oraseSpania);
 
-        for(String key: obiecte.keySet()) {
+        for (String key : obiecte.keySet()) {
             System.out.println("Tara este: " + key);
             System.out.println("Orasele sunt: " + obiecte.get(key));
         }
@@ -91,7 +91,7 @@ public class Colectii {
         ingrediente.put("Prajitura", ingredientePrajitura);
         ingrediente.put("Sarmale", ingredienteSarmale);
 
-        for(String key: ingrediente.keySet()) {
+        for (String key : ingrediente.keySet()) {
             System.out.println("Reteta este: " + key);
             System.out.println("Ingredientele sunt: " + ingrediente.get(key));
         }

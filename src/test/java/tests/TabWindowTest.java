@@ -3,23 +3,17 @@ package tests;
 import helpMethods.ElementsMethod;
 import helpMethods.TabMethods;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.HomePage;
+import sharedData.ShareData;
 
-public class TabWindowTest {
-    public WebDriver driver;
+public class TabWindowTest extends ShareData {
     ElementsMethod elementsMethod;
     TabMethods tabMethods;
 
     @Test
     public void metodaTest() {
-        driver = new ChromeDriver();
-        driver.get("https://demoqa.com/");
-        driver.manage().window().maximize();
-
         elementsMethod = new ElementsMethod(driver);
         tabMethods = new TabMethods(driver);
 
@@ -42,6 +36,5 @@ public class TabWindowTest {
         WebElement newWindowElement = driver.findElement(By.id("windowButton"));
         elementsMethod.javaScriptElement(newWindowElement);
         tabMethods.switchSpecificTab(1);
-        driver.quit();
     }
 }
