@@ -13,15 +13,15 @@ public class StructuriRepetitive {
 
     // afisare primele n numere
     public void afisareNumere(int capat) {
-        for(int index = 0; index < capat; index++) {
+        for (int index = 0; index < capat; index++) {
             System.out.println("Vreau sa afisez numarul " + index);
         }
     }
 
     // afisare numere pare de la 0 la 50
     public void afisareNumerePare(int capat) {
-        for(int i = 0; i <= capat; i++) {
-            if(i % 2 == 0) {
+        for (int i = 0; i <= capat; i++) {
+            if (i % 2 == 0) {
                 System.out.println("Vreau sa afisez " + i);
             }
         }

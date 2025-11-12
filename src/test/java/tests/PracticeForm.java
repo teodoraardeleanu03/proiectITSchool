@@ -2,24 +2,17 @@ package tests;
 
 import helpMethods.ElementsMethod;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import sharedData.ShareData;
 
 import java.util.List;
 
-public class PracticeForm {
-    public WebDriver driver;
+public class PracticeForm extends ShareData {
     ElementsMethod elementsMethod;
 
     @Test
     public void metodaTest() {
-        // deschidem un browser
-        driver = new ChromeDriver();
         elementsMethod = new ElementsMethod(driver);
-
-        // accesam un url
-        driver.get("https://demoqa.com/");
-        driver.manage().window().maximize();
 
         WebElement formsMenu = driver.findElement(By.xpath("//h5[text()='Forms']"));
         elementsMethod.javaScriptElement(formsMenu);
@@ -50,9 +43,9 @@ public class PracticeForm {
         elementsMethod.selectDropdownElement(yearElement, "1999");
 
         String dayValue = "23";
-        List <WebElement> daysList = driver.findElements(By.xpath("//div[contains(@class, 'react-datepicker__day--') and not (contains(@class, '--outside-month'))]"));
-        for ( int i=0; i< daysList.size(); i++){
-            if (daysList.get(i).getText().equals(dayValue)){
+        List<WebElement> daysList = driver.findElements(By.xpath("//div[contains(@class, 'react-datepicker__day--') and not (contains(@class, '--outside-month'))]"));
+        for (int i = 0; i < daysList.size(); i++) {
+            if (daysList.get(i).getText().equals(dayValue)) {
                 elementsMethod.clickElement(daysList.get(i));
                 break;
             }

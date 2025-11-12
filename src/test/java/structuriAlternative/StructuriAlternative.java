@@ -21,7 +21,7 @@ public class StructuriAlternative {
     }
 
     public void verificaPersoanaMajora(int varsta) {
-        if(varsta >= 18) {
+        if (varsta >= 18) {
             System.out.println("Persoana este majora");
         } else {
             System.out.println("Persoana este minora");
@@ -29,7 +29,7 @@ public class StructuriAlternative {
     }
 
     public void verificareNumarPar(int numar) {
-        if(numar % 2 == 0) {
+        if (numar % 2 == 0) {
             System.out.println(numar + " este numar par");
         } else {
             System.out.println((numar + " este numar impar"));
@@ -37,7 +37,7 @@ public class StructuriAlternative {
     }
 
     public void divizibilCinciPozitiv(int numar) {
-        if(numar > 0 && numar % 5 == 0) {
+        if (numar > 0 && numar % 5 == 0) {
             System.out.println(numar + " este pozitiv si divizibil cu 5");
         } else {
             System.out.println(numar + " nu indeplineste una dintre conditii");
@@ -48,7 +48,7 @@ public class StructuriAlternative {
     // la switch compilatorul sare la valoarea pe care i-am dat-o ca si parametru
 
     public void zileleSaptamanii(int zi) {
-        switch(zi) {
+        switch (zi) {
             case 1:
                 System.out.println("Astazi este luni");
                 break;
