@@ -1,6 +1,6 @@
 package oop;
 
-public class Sportiv extends Persoana {
+public class Sportiv extends Persoana implements SportivInterface {
     private String sport;
     private boolean sportEchipa;
     private int experienta;
@@ -57,5 +57,20 @@ public class Sportiv extends Persoana {
 
     public void setExperienta(int experienta) {
         this.experienta = experienta;
+    }
+
+    @Override
+    public void mergeLaAntrenamente() {
+        System.out.println("Sportivul merge la antrenamente regulat.");
+    }
+
+    @Override
+    public void participaLaCompetitii() {
+        System.out.println("Sportivul participa la competitii.");
+    }
+
+    @Override
+    public void respectaRegimAlimentar() {
+        System.out.println("Sportivul respecta un regim alimentar.");
     }
 }

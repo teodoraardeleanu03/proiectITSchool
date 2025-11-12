@@ -21,6 +21,9 @@ public class MostenireTest {
         System.out.println();
         angajat.afiseazaDetalii("Altex", true);
         System.out.println();
+        angajat.ajungeLaTimpLaBirou();
+        angajat.munceste();
+        angajat.respectaRegulamentulIntern();
 
         Sportiv sportiv = new Sportiv("Ionescu", "Maria", 25, "Libertatii 10", "Fotbal", true, 3);
         sportiv.infoSportiv();
@@ -33,6 +36,9 @@ public class MostenireTest {
         System.out.println();
         sportiv.cautaSportivi("Fotbal", 2);
         System.out.println();
+        sportiv.mergeLaAntrenamente();
+        sportiv.participaLaCompetitii();
+        sportiv.respectaRegimAlimentar();
 
         Student student = new Student("Georgescu", "Ion", 22, "Unirii 5", "Ion Mincu Timisoara", "IT", 2, false);
         student.infoStudent();
@@ -44,5 +50,8 @@ public class MostenireTest {
         student.cautaStudent(true);
         System.out.println();
         student.cautaStudent("ASE", 3);
+        student.mergeLaCursuri();
+        student.trebuieSaStudieze();
+        student.saNuAibaRestante();
     }
 }
