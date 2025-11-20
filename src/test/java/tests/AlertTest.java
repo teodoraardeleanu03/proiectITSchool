@@ -15,16 +15,16 @@ public class AlertTest extends ShareData {
 
     @Test
     public void metodaTest() {
-        elementsMethod = new ElementsMethod(driver);
-        alertsMethods = new AlertsMethods(driver);
+        elementsMethod = new ElementsMethod(getDriver());
+        alertsMethods = new AlertsMethods(getDriver());
 
         // wait implicit (vegheaza asupra codului)
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.clickAlertFrameWindow();
 
-        AlertsWindows alertsWindows = new AlertsWindows(driver);
+        AlertsWindows alertsWindows = new AlertsWindows(getDriver());
         alertsWindows.clickAlert();
         alertsWindows.dealAlertProcess();
     }

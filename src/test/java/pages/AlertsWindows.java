@@ -6,17 +6,17 @@ import org.openqa.selenium.support.FindBy;
 
 public class AlertsWindows extends BasePage {
     @FindBy(xpath = "//span[text()='Alerts']")
-    public WebElement alert;
+    private WebElement alert;
     @FindBy(id = "alertButton")
-    public WebElement firstAlertButton;
+    private WebElement firstAlertButton;
     @FindBy(id = "timerAlertButton")
-    public WebElement secondAlert;
+    private WebElement secondAlert;
     @FindBy(id = "confirmButton")
-    public WebElement thirdAlertButton;
+    private WebElement thirdAlertButton;
     @FindBy(id = "promtButton")
-    public WebElement fourthAlertButton;
+    private WebElement fourthAlertButton;
     @FindBy(id = "confirmResult")
-    WebElement textThirdAlert;
+    private WebElement textThirdAlert;
 
     public AlertsWindows(WebDriver driver) {
         super(driver);

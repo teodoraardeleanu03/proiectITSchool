@@ -11,12 +11,12 @@ public class Frames extends ShareData {
 
     @Test
     public void metodaTest() {
-        elementsMethod = new ElementsMethod(driver);
+        elementsMethod = new ElementsMethod(getDriver());
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.clickAlertFrameWindow();
 
-        FramesPage framesPage = new FramesPage(driver);
+        FramesPage framesPage = new FramesPage(getDriver());
         framesPage.clickFrame();
         framesPage.switchFrames("frame1", "frame2");
     }

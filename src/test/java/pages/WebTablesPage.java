@@ -1,49 +1,47 @@
 package pages;
 
-import helpMethods.ElementsMethod;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import java.util.List;
 
 public class WebTablesPage extends BasePage {
     @FindBy(xpath = "//div[@class='rt-tbody']/div/div[@class='rt-tr -odd' or @class='rt-tr -even']")
-    public List<WebElement> tableContentList;
+    private List<WebElement> tableContentList;
     @FindBy(id = "addNewRecordButton")
-    public WebElement addElement;
+    private WebElement addElement;
     @FindBy(id = "firstName")
-    WebElement firstNameElement;
+    private WebElement firstNameElement;
     @FindBy(id = "lastName")
-    WebElement lastNameElement;
+    private WebElement lastNameElement;
     @FindBy(id = "userEmail")
-    WebElement emailElement;
+    private WebElement emailElement;
     @FindBy(id = "age")
-    WebElement ageElement;
+    private WebElement ageElement;
     @FindBy(id = "salary")
-    WebElement salaryElement;
+    private WebElement salaryElement;
     @FindBy(id = "department")
-    WebElement departmentElement;
+    private WebElement departmentElement;
     @FindBy(id = "submit")
-    WebElement submitElement;
+    private WebElement submitElement;
     @FindBy(xpath = "//div[@class='rt-tbody']/div/div[@class='rt-tr -odd' or @class='rt-tr -even']")
-    List<WebElement> continutTabelNou;
+    private List<WebElement> continutTabelNou;
     @FindBy(id = "edit-record-4")
-    WebElement editElement;
+    private WebElement editElement;
     @FindBy(id = "firstName")
-    WebElement editFirstNameElement;
+    private WebElement editFirstNameElement;
     @FindBy(id = "lastName")
-    WebElement editLastNameElement;
+    private WebElement editLastNameElement;
     @FindBy(id = "age")
-    WebElement editAgeElement;
+    private WebElement editAgeElement;
     @FindBy(id = "submit")
-    WebElement submitbutton2Button;
+    private WebElement submitbutton2Button;
     @FindBy(id = "delete-record-4")
-    WebElement deleteElement;
+    private WebElement deleteElement;
     @FindBy(xpath = "//div[@class='rt-tbody']/div/div[@class='rt-tr -odd' or @class='rt-tr -even']")
-    List<WebElement> continutTabelSters;
+    private List<WebElement> continutTabelSters;
 
     public WebTablesPage(WebDriver driver) {
         super(driver);

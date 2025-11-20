@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class FramesPage extends BasePage {
     @FindBy(xpath = "//span[text()='Frames']")
-    public WebElement frameMenu;
+    private WebElement frameMenu;
 
     public FramesPage(WebDriver driver) {
         super(driver);
