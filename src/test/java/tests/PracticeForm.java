@@ -2,57 +2,50 @@ package tests;
 
 import helpMethods.ElementsMethod;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import sharedData.ShareData;
 
 import java.util.List;
 
-public class PracticeForm {
-    public WebDriver driver;
+public class PracticeForm extends ShareData {
     ElementsMethod elementsMethod;
 
     @Test
     public void metodaTest() {
-        // deschidem un browser
-        driver = new ChromeDriver();
-        elementsMethod = new ElementsMethod(driver);
+        elementsMethod = new ElementsMethod(getDriver());
 
-        // accesam un url
-        driver.get("https://demoqa.com/");
-        driver.manage().window().maximize();
-
-        WebElement formsMenu = driver.findElement(By.xpath("//h5[text()='Forms']"));
+        WebElement formsMenu = getDriver().findElement(By.xpath("//h5[text()='Forms']"));
         elementsMethod.javaScriptElement(formsMenu);
 
-        WebElement practiceForm = driver.findElement(By.xpath("//span[text()='Practice Form']"));
+        WebElement practiceForm = getDriver().findElement(By.xpath("//span[text()='Practice Form']"));
         elementsMethod.javaScriptElement(practiceForm);
 
-        WebElement firstNameElement = driver.findElement(By.id("firstName"));
+        WebElement firstNameElement = getDriver().findElement(By.id("firstName"));
         elementsMethod.fillElement(firstNameElement, "Teodora");
 
-        WebElement lastNameElement = driver.findElement(By.id("lastName"));
+        WebElement lastNameElement = getDriver().findElement(By.id("lastName"));
         elementsMethod.fillElement(lastNameElement, "Ardeleanu");
 
-        WebElement emailElement = driver.findElement(By.id("userEmail"));
+        WebElement emailElement = getDriver().findElement(By.id("userEmail"));
         elementsMethod.fillElement(emailElement, "test@test.com");
 
-        WebElement mobileElement = driver.findElement(By.id("userNumber"));
+        WebElement mobileElement = getDriver().findElement(By.id("userNumber"));
         elementsMethod.fillElement(mobileElement, "000444555");
 
         //Date Of birth interaction
-        WebElement dateOfBirth = driver.findElement(By.id("dateOfBirthInput"));
+        WebElement dateOfBirth = getDriver().findElement(By.id("dateOfBirthInput"));
         elementsMethod.javaScriptElement(dateOfBirth);
 
-        WebElement monthElement = driver.findElement(By.className("react-datepicker__month-select"));
+        WebElement monthElement = getDriver().findElement(By.className("react-datepicker__month-select"));
         elementsMethod.selectDropdownElement(monthElement, "January");
 
-        WebElement yearElement = driver.findElement(By.className("react-datepicker__year-select"));
+        WebElement yearElement = getDriver().findElement(By.className("react-datepicker__year-select"));
         elementsMethod.selectDropdownElement(yearElement, "1999");
 
         String dayValue = "23";
-        List <WebElement> daysList = driver.findElements(By.xpath("//div[contains(@class, 'react-datepicker__day--') and not (contains(@class, '--outside-month'))]"));
-        for ( int i=0; i< daysList.size(); i++){
-            if (daysList.get(i).getText().equals(dayValue)){
+        List<WebElement> daysList = getDriver().findElements(By.xpath("//div[contains(@class, 'react-datepicker__day--') and not (contains(@class, '--outside-month'))]"));
+        for (int i = 0; i < daysList.size(); i++) {
+            if (daysList.get(i).getText().equals(dayValue)) {
                 elementsMethod.clickElement(daysList.get(i));
                 break;
             }

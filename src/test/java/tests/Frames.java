@@ -1,29 +1,22 @@
 package tests;
 
 import helpMethods.ElementsMethod;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.FramesPage;
 import pages.HomePage;
+import sharedData.ShareData;
 
-public class Frames {
-    public WebDriver driver;
+public class Frames extends ShareData {
     ElementsMethod elementsMethod;
 
     @Test
     public void metodaTest() {
-        //Deschidem un browser
-        driver = new ChromeDriver();
-        elementsMethod = new ElementsMethod(driver);
-        //Accesam un URL
-        driver.get("https://demoqa.com/");
-        driver.manage().window().maximize();
+        elementsMethod = new ElementsMethod(getDriver());
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.clickAlertFrameWindow();
 
-        FramesPage framesPage = new FramesPage(driver);
+        FramesPage framesPage = new FramesPage(getDriver());
         framesPage.clickFrame();
         framesPage.switchFrames("frame1", "frame2");
     }
